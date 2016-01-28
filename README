@@ -1,0 +1,17 @@
+Hi
+--
+
+This is essentially the build requirements for a
+project to be open sourced, so included
+are the schematic and a simple pcb parts
+location image, and this this oshpark URL:
+https://oshpark.com/shared_projects/BZEKleTn
+
+
+And the parts list:		- Example URLs
+R1, R2: 4k7 0805 resistor	- http://uk.farnell.com/walsin/wr08x4701ftl/res-thick-film-4k7-1-150v-0805/dp/2502731
+C1: 1u 0805 capacitor		- http://uk.farnell.com/murata/grm219f51e105za01d/capacitor-0805-1uf-y5v/dp/1403870
+U1: 74LVC4066			- http://uk.farnell.com/on-semiconductor/mc74lvxt4066dr2g/analogue-switch-quad-spst-nsoic/dp/2464564RL , http://eu.mouser.com/ProductDetail/NXP-Semiconductors/74LVC4066D118
+P2: 2x4 IDC header
+U2: SO-8 SPI flash chip
+
