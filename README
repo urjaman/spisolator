@@ -1,5 +1,5 @@
-Hi
---
+SPI Isolator
+------------
 
 This is essentially the build requirements for a
 project to be open sourced, so included
@@ -10,9 +10,49 @@ https://oshpark.com/shared_projects/BZEKleTn
 
 And the parts list:		- Example URLs
 R1, R2: 4k7 0805 resistor	- http://uk.farnell.com/walsin/wr08x4701ftl/res-thick-film-4k7-1-150v-0805/dp/2502731
-C1: 1u 0805 capacitor		- http://uk.farnell.com/murata/grm219f51e105za01d/capacitor-0805-1uf-y5v/dp/1403870
+C1: 1u 0805 capacitor		- http://uk.farnell.com/kemet/c0805c105z3vactu/ceramic-capacitor-1uf-25v-y5v/dp/1269997
 D1: schottky SOD-323 diode	- http://uk.farnell.com/nxp/pmeg2005aea/diode-schottky-sod-323/dp/8737843
 U1: 74LVC4066			- http://uk.farnell.com/on-semiconductor/mc74lvxt4066dr2g/analogue-switch-quad-spst-nsoic/dp/2464564 , http://eu.mouser.com/ProductDetail/NXP-Semiconductors/74LVC4066D118
-P2: 2x4 IDC header
-U2: SO-8 SPI flash chip
+P2: 2x4 IDC header		- http://uk.farnell.com/te-connectivity-amp/826942-4/header-straight-2x4way/dp/1248160
+U2: SO-8 SPI flash chip		- http://uk.farnell.com/spansion/s25fl164k0xmfi011/ic-memory-flash-64mbit-soic-8/dp/2363323
+
+
+Build Howto and Usage (beta, untested)
+--------------------------------------
+solder the components on the PCB, a probably fine order is
+U1, C1, R2, D1, R1, U2, P2
+remove the flash chip from the target machine, and attach the
+PCB as near as possible to its layout (maybe with double-sided tape),
+but not over the layout.
+Connect small (patch, "green wire") wires from the 6 places
+on the edge of the PCB to the layout
+
+the 2x4 ISP connector is compatible with the one in the PC Engines
+APU series, so if you have an ISP lead for them, it should work
+for this, otherwise, the pinout is:
+3V3 1 2 GND
+!CS 3 4 SCK
+ DI 5 6 DO
+--  7 8 buffer en/!dis
+
+The analog switch/buffer is normally controlled by 
+the 3V3 power on the motherboard, so the chip is externally
+programmable when the motherboard 3.3V supply is OFF
+
+The buffer control line is an extension to the APU
+connector (it had nothing there), that can be used 
+to program externally even if the target motherboard
+is running. To do that, connect pin 8 of the ISP header to ground,
+but preferably not too hard;
+if you connect the header the wrong way around and there is some other
+ground connection between the programmer and the motherboard (eg. RS232),
+this would connect the 3V3 line to ground.
+So a suggested safer circuit is:
+
+pin 8 - 50 ohm - switch - pin 2 
+
+With parts for this extension:
+http://uk.farnell.com/multicomp/mcknp03uj0500b00/resistor-wirewound-50r-5-3w/dp/1903828
+http://uk.farnell.com/multicomp/mcr13-5-05/switch-toggle-spst-off-on-so/dp/2128120
+
 
