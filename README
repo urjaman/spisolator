@@ -5,7 +5,7 @@ This is essentially the build requirements for a
 project to be open sourced, so included
 are the schematic and a simple pcb parts
 location image, and this this oshpark URL:
-https://oshpark.com/shared_projects/BZEKleTn
+https://oshpark.com/shared_projects/EpLaQrs8
 
 
 And the parts list:		- Example URLs
@@ -20,7 +20,7 @@ U2: SO-8 SPI flash chip		- http://uk.farnell.com/spansion/s25fl164k0xmfi011/ic-m
 Build Howto and Usage (beta, untested)
 --------------------------------------
 solder the components on the PCB, a probably fine order is
-U1, C1, R2, D1, R1, U2, P2
+starting from the underside first...
 remove the flash chip from the target machine, and attach the
 PCB as near as possible to its layout (maybe with double-sided tape),
 but not over the layout.
