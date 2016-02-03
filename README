@@ -1,12 +1,14 @@
 SPI Isolator
 ------------
 
-This is essentially the build requirements for a
-project to be open sourced, so included
-are the schematic and a simple pcb parts
-location image, and this this oshpark URL:
-https://oshpark.com/shared_projects/EpLaQrs8
+This is a PCB for allowing arbitrary motherboards
+to have their SPI flash chip isolated from the
+motherboard when powered off (or via control signal), 
+to allow external (ISP) programming.
 
+KiCad sources and gerbers are in the repo, but
+for simple purchasing, there's the PCB shared in oshpark:
+https://oshpark.com/shared_projects/EpLaQrs8
 
 And the parts list:		- Example URLs
 R1, R2: 4k7 0805 resistor	- http://uk.farnell.com/walsin/wr08x4701ftl/res-thick-film-4k7-1-150v-0805/dp/2502731
@@ -15,6 +17,12 @@ D1: schottky SOD-323 diode	- http://uk.farnell.com/nxp/pmeg2005aea/diode-schottk
 U1: 74LVC4066			- http://uk.farnell.com/on-semiconductor/mc74lvxt4066dr2g/analogue-switch-quad-spst-nsoic/dp/2464564 , http://eu.mouser.com/ProductDetail/NXP-Semiconductors/74LVC4066D118
 P2: 2x4 IDC header		- http://uk.farnell.com/te-connectivity-amp/826942-4/header-straight-2x4way/dp/1248160
 U2: SO-8 SPI flash chip		- http://uk.farnell.com/spansion/s25fl164k0xmfi011/ic-memory-flash-64mbit-soic-8/dp/2363323
+
+Oh, and if you like this, pizza money donations are accepted via paypal:
+urjaman at gmail dot com.
+
+Known unsupported: Quad I/O. If you have a motherboard that needs that, message me,
+for a small donation I could make a version that supports Quad I/O ;)
 
 
 Build Howto and Usage (beta, untested)
