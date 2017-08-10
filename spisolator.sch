@@ -28,6 +28,7 @@ LIBS:opto
 LIBS:atmel
 LIBS:contrib
 LIBS:valves
+LIBS:spisolator-cache
 EELAYER 25 0
 EELAYER END
 $Descr A4 11693 8268
@@ -332,20 +333,10 @@ Wire Wire Line
 Wire Wire Line
 	6000 3000 4800 3000
 Wire Wire Line
-	6000 3100 5850 3100
-Wire Wire Line
-	5850 3100 5850 3700
-Connection ~ 5850 3700
-Wire Wire Line
 	6500 3000 6600 3000
 Wire Wire Line
 	6600 3000 6600 3600
 Connection ~ 6500 3600
-Wire Wire Line
-	6500 3100 6700 3100
-Wire Wire Line
-	6700 3100 6700 3800
-Connection ~ 6700 3800
 Connection ~ 5950 4700
 $Comp
 L C_Small C1
@@ -537,4 +528,14 @@ Wire Wire Line
 Wire Wire Line
 	4900 3700 4950 3700
 Connection ~ 4900 3600
+Wire Wire Line
+	5850 3800 5850 3100
+Wire Wire Line
+	5850 3100 6000 3100
+Connection ~ 5850 3800
+Wire Wire Line
+	6700 3700 6700 3100
+Wire Wire Line
+	6700 3100 6500 3100
+Connection ~ 6700 3700
 $EndSCHEMATC

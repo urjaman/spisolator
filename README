@@ -6,9 +6,9 @@ to have their SPI flash chip isolated from the
 motherboard when powered off (or via control signal), 
 to allow external (ISP) programming.
 
-KiCad sources and gerbers are in the repo, but
+KiCad sources are in the repo, but
 for simple purchasing, there's the PCB shared in oshpark:
-https://oshpark.com/shared_projects/EpLaQrs8
+https://oshpark.com/shared_projects/ZljIshjt
 
 And the parts list:		- Example URLs
 R1, R2: 4k7 0805 resistor	- http://uk.farnell.com/walsin/wr08x4701ftl/res-thick-film-4k7-1-150v-0805/dp/2502731
@@ -40,8 +40,12 @@ APU series, so if you have an ISP lead for them, it should work
 for this, otherwise, the pinout is:
 3V3 1 2 GND
 !CS 3 4 SCK
- DI 5 6 DO
+ SO 5 6 SI
 --  7 8 buffer en/!dis
+
+NOTE: The 160129 version was not compatible with the APU pinout
+(which is a dediprog programming pinout), the MOSI and MISO were accidentally
+swapped.
 
 The analog switch/buffer is normally controlled by 
 the 3V3 power on the motherboard, so the chip is externally
